@@ -2,7 +2,10 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background: transparent;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* Use OS default fonts */
@@ -19,23 +22,196 @@ body {
 		'Segoe UI Emoji';
 	text-rendering: optimizeLegibility;
 	font-feature-settings: 'liga', 'clig', 'kern';
+	background-color: rgb(27, 27, 29, 1);
+	transition: 0.3s;
+	color: #8E8E93;
+	margin: 0;
+}
+
+.noselect {
+	user-select: none;
 }
 
 header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+	-webkit-app-region: drag;
+	position: relative;
+	top: 0;
+	width: 100%;
 }
 
-header h1 {
-	font-size: 60px;
-	font-weight: 200;
+header .controls {
+	text-align: right;
+	padding: 5px 15px;
+	z-index: 100;
+}
+
+header .controls button {
+	opacity: 0.3;
+	font-weight: bold;
+	color: #FC5753;
+	-webkit-app-region: no-drag;
+	background-color: #FC5753;
+	border-radius: 100%;
+	border: 1px solid #DF4744;
+	transition: 0.1s;
+	width: 18px;
+	padding: 0;
+	height: 18px;
+	text-align: center;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.274);
+}
+
+header .controls button#minimize {
+	background-color: #FDBC40;
+	color: #FDBC40;
+	border: 1px solid #DE9F34;
+}
+
+header .controls button#minimize:hover {
+	color: #985712;
+}
+
+header .controls button:hover {
+	opacity: 1;
+	color: #7E0508;
+	transition: 0.1s;
+}
+
+.main {
+	padding: 0 20px;
+}
+
+.main .date {
+	text-align: center;
+	-webkit-app-region: drag;
+}
+
+.list {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.tasks {
+	max-height: 60vh;
+	overflow-y: auto;
+	margin-bottom: 20px;
+}
+
+.tasks::-webkit-scrollbar {
+	width: 20px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 10px 10px #2C2C2E;
+	border: solid 8px transparent;
+}
+
+ul {
+	list-style: none;
 	margin: 0;
 	padding: 0;
-	opacity: 0.7;
+}
+
+li.task {
+	margin-bottom: 10px;
+	background-color: #252527;
+	padding: 10px;
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+li.task.placeholder {
+	height: 40px;
+	background-color: #2C2C2E;
+}
+
+li.task:hover {
+	background-color: #2C2C2E;
+	transition: 0.2s;
+}
+
+hr {
+	border: 1px solid #2C2C2E;
+}
+
+li#add-new {
+	width: 100%;
+	text-align: center;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: #2C2C2E;
+	opacity: 0.5;
+	transition: 0.2s;
+}
+
+li#add-new:hover {
+	opacity: 1;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+li#add-new button {
+	font-size: 20px;
+	background-color: #2C2C2E;
+	border-radius: 100%;
+	border: 1px solid #3A3A3C;
+	color: #8E8E93;
+}
+
+li#add-new button:hover {
+	cursor: pointer;
+}
+
+button:focus {
+	outline: none;
+}
+
+label {
+	margin-left: 5px;
+}
+
+input:focus {
+	outline: none;
+}
+
+input[type=range] {
+	-webkit-app-region: no-drag;
+	width: 100%;
+	-webkit-appearance: none;
+	background: #2C2C2E;
+	outline: none;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #8E8E93;
+	cursor: pointer;
+	border: 4px solid #333;
+	box-shadow: -407px 0 0 400px #3A3A3C;
+}
+  
+
+input[type=text] {
+	background: none;
+	color: #8E8E93;
+	border: none;
+	font-size: 18px;
+	border-bottom: 1px solid #636366;
+	width: 100%;
+	animation: fillInput 1s 1;
+}
+
+@keyframes fillInput {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }

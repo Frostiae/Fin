@@ -1,14 +1,14 @@
 {
-	"name": "app-name",
-	"productName": "App Name",
+	"name": "fin",
+	"productName": "Fin",
 	"version": "0.0.0",
-	"description": "The best app ever",
+	"description": "An extremely minimal task organization app for desktop.",
 	"license": "MIT",
-	"repository": "sindresorhus/electron-boilerplate",
+	"repository": " Frostiae/Fin",
 	"author": {
-		"name": "Your Name",
-		"email": "user@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "Ibrahim Ennara",
+		"email": "ibraennara@gmail.com",
+		"url": "https://ibraennara.com"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",

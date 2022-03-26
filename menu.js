@@ -51,7 +51,7 @@ if (!is.macos) {
 		},
 		aboutMenuItem({
 			icon: path.join(__dirname, 'static', 'icon.png'),
-			text: 'Created by Your Name'
+			text: 'Created by Ibraennara'
 		})
 	);
 }
@@ -66,7 +66,7 @@ const debugSubmenu = [
 	{
 		label: 'Show App Data',
 		click() {
-			shell.openItem(app.getPath('userData'));
+			shell.openPath(app.getPath('userData'));
 		}
 	},
 	{

@@ -34,8 +34,17 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.name,
 		show: false,
-		width: 600,
-		height: 400
+		width: 400,
+		height: 600,
+		frame: false,
+		minWidth: 400,
+		minHeight: 400,
+		transparent: true,
+		webPreferences: {
+			enableRemoteModule: true,
+			contextIsolation: false,
+			nodeIntegration: true
+		}
 	});
 
 	win.on('ready-to-show', () => {
@@ -85,6 +94,6 @@ app.on('activate', async () => {
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
 
-	const favoriteAnimal = config.get('favoriteAnimal');
-	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
+	//const favoriteAnimal = config.get('favoriteAnimal');
+	//mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();

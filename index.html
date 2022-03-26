@@ -2,17 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Electron boilerplate</title>
+		<title>Fin</title>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
 		<div class="container">
 			<header>
-				<h1>Electron boilerplate</h1>
-				<p></p>
+				<div class="controls">
+					<button onclick="minimizeApp()" id="minimize">-</button>
+					<button onclick="closeApp()">x</button>
+				</div>
 			</header>
-			<section class="main"></section>
-			<footer></footer>
+			<section class="main">
+				<div class="date noselect">
+					<h2 id="date">Today</h2>
+					<input type="range" min="0" max="1" step="0.01" name="transparency" id="transparency" onchange="setTransparency(this.value)">
+					<hr>
+				</div>
+				<div class="list">
+					<ul id="todo-list">
+						<div class="tasks" id="tasks">
+						</div>
+						<li id="add-new" onclick="newTask()">
+							<button>+</button>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</div>
 	</body>
+	<script src="fin.js"></script>
 </html>

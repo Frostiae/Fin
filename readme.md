@@ -36,9 +36,9 @@ There's also a [Yeoman generator](https://github.com/sindresorhus/generator-elec
 
 ---
 
-# App Name
+# Fin
 
-> The best app ever
+> An extremely minimal task organization app for desktop. 
 
 ## Install
 
